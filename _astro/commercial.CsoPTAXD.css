@@ -6,3 +6,26 @@
   .text-4xl{font-size:1.875rem;line-height:2.25rem}
   .h-18[data-astro-cid-5hce7sga]{height:4rem}
 }
+
+@media(max-width:639px){
+  /* Trust bar — show only 3 items, smaller text */
+  .overflow-x-auto .whitespace-nowrap:nth-child(n+6){display:none}
+  .overflow-x-auto .text-slate-500:nth-child(n+5){display:none}
+  .overflow-x-auto{font-size:.75rem;gap:.75rem}
+
+  /* Hero — reduce vertical padding on mobile */
+  .py-20{padding-top:3rem;padding-bottom:3rem}
+
+  /* Image grid — 2 columns max on mobile */
+  .grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  
+  /* Reduce section padding further on small screens */
+  .section-pad{padding:2.5rem 1rem}
+  .section-pad-sm{padding:1.75rem 1rem}
+
+  /* Ensure all text stays within bounds */
+  h1,h2,h3,p{word-wrap:break-word;overflow-wrap:break-word}
+  
+  /* Reduce h1 size slightly more on very small screens */
+  .text-4xl{font-size:1.75rem;line-height:2.1rem}
+}
