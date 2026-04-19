@@ -10,12 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Wrangler
-        run: npm install -g wrangler
-
       - name: Deploy to Cloudflare Pages
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: eedaa414d5db82bf381cb2cec43107e9
-        run: wrangler pages deploy . --project-name guttermen --commit-dirty=true
-
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: eedaa414d5db82bf381cb2cec43107e9
+          command: pages deploy . --project-name guttermen --branch main
