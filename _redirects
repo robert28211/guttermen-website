@@ -1,0 +1,7 @@
+# Old quote URLs from previous WordPress site → contact page
+# These were getting silently served the homepage at the same URL,
+# which caused the high-bounce phantom /quote page traffic.
+/quote                                    /contact/  301
+/quote/                                   /contact/  301
+/request-a-free-quote-gutter-company-sc   /contact/  301
+/request-a-free-quote-gutter-company-sc/  /contact/  301
