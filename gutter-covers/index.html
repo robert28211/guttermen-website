@@ -15,7 +15,11 @@
     gtag("config", "G-P71BCC89FJ");
     document.addEventListener("click", function(e) {
       var link = e.target.closest('a[href^="tel:"]');
-      if (link) { gtag("event", "conversion", {"send_to": "AW-16949222039/6r5OCOPlqfYbEJe1gpI_"}); }
+      if (!link) return;
+      if (!window.matchMedia("(pointer: coarse)").matches) return; // mobile that can actually dial
+      if (sessionStorage.getItem("gm_call_fired")) return;          // count once per visit
+      sessionStorage.setItem("gm_call_fired", "1");
+      gtag("event", "conversion", {"send_to": "AW-16949222039/6r5OCOPlqfYbEJe1gpI_"});
     });
   </script>
 <script type="application/ld+json">
